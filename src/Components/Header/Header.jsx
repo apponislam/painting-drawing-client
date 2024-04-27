@@ -132,7 +132,7 @@ const Header = () => {
                                     <img className="rounded-full p-1" src={user?.photoURL} alt="" />
                                 </div>
                             </a>
-                            <Tooltip anchorSelect="#clickable" clickable>
+                            <Tooltip className="z-50" anchorSelect="#clickable" clickable>
                                 <p className="text-center mb-5">{user?.displayName}</p>
                                 <button className="btn btn-success p-3 w-full text-white" onClick={logOutbtn}>
                                     LogOut
@@ -149,7 +149,7 @@ const Header = () => {
                             </Link>
                         </>
                     )}
-                    <label className="cursor-pointer grid place-items-center">
+                    <label className="cursor-pointer grid place-items-center z-50">
                         {/* <input type="checkbox" className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2" onChange={themeToggle} /> */}
                         <input type="checkbox" className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2" onChange={themeToggle} checked={theme === "dark"} />
                         <svg className="col-start-1 row-start-1 stroke-base-100 fill-base-100" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

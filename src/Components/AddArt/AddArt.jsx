@@ -1,5 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const AddArt = () => {
     const { user } = useContext(AuthContext);
@@ -39,11 +41,28 @@ const AddArt = () => {
         const processing_time = form.itemProcessTime.value;
         const stockStatus = stoke;
         const artItem = { username, useremail, image, item_name, subcategory_Name, short_description, price, rating, customization, processing_time, stockStatus };
-        console.log(artItem);
+        fetch("http://localhost:5000/allart", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(artItem),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                if (data.insertedId) {
+                    toast.success("Art item inserted successfully");
+                }
+            });
+        form.reset();
     };
 
     return (
         <div className="container mx-auto">
+            <Helmet>
+                <title>Add Craft Item | Appon Painting & Drawing</title>
+            </Helmet>
             <div className="flex justify-center items-center my-24">
                 <div className="bg-gray-600 p-8 rounded-3xl text-white w-1/2">
                     <h1 className="text-center text-4xl font-semibold uppercase mb-6">Add Craft</h1>
@@ -79,7 +98,7 @@ const AddArt = () => {
                                 <div className="label">
                                     <span className="label-text text-white">Price</span>
                                 </div>
-                                <input type="text" name="price" placeholder="Type short description" className="input input-bordered w-full text-orange-700" />
+                                <input type="text" name="price" placeholder="price" className="input input-bordered w-full text-orange-700" />
                             </label>
                             <label className="form-control w-full">
                                 <div className="label">

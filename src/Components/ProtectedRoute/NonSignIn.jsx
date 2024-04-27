@@ -21,7 +21,7 @@ const NonSignIn = ({ children }) => {
         return children;
     }
 
-    return <Navigate state={location.pathname} to="/signin"></Navigate>;
+    return <Navigate state={location.pathname} to="/login"></Navigate>;
 };
 
 NonSignIn.propTypes = {

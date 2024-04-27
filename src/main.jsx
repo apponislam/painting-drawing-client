@@ -16,6 +16,7 @@ import AlreadySignIn from "./Components/ProtectedRoute/AlreadySignIn.jsx";
 import Errorpage from "./Components/Errorpage/Errorpage.jsx";
 import AddArt from "./Components/AddArt/AddArt.jsx";
 import NonSignIn from "./Components/ProtectedRoute/NonSignIn.jsx";
+import ViewDetails from "./Components/ViewDetails/ViewDetails.jsx";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
+                loader: () => fetch("http://localhost:5000/allart"),
             },
             {
                 path: "/login",
@@ -48,6 +50,15 @@ const router = createBrowserRouter([
                 element: (
                     <NonSignIn>
                         <AddArt></AddArt>
+                    </NonSignIn>
+                ),
+            },
+            {
+                path: "/:id",
+                loader: ({ params }) => fetch(`http://localhost:5000/allart/${params.id}`),
+                element: (
+                    <NonSignIn>
+                        <ViewDetails></ViewDetails>
                     </NonSignIn>
                 ),
             },
