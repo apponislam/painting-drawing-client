@@ -13,11 +13,13 @@ import "react-tooltip/dist/react-tooltip.css";
 
 import "react-toastify/dist/ReactToastify.css";
 import AlreadySignIn from "./Components/ProtectedRoute/AlreadySignIn.jsx";
+import Errorpage from "./Components/Errorpage/Errorpage.jsx";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <App></App>,
+        errorElement: <Errorpage></Errorpage>,
         children: [
             {
                 path: "/",
