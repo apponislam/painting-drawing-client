@@ -14,6 +14,8 @@ import "react-tooltip/dist/react-tooltip.css";
 import "react-toastify/dist/ReactToastify.css";
 import AlreadySignIn from "./Components/ProtectedRoute/AlreadySignIn.jsx";
 import Errorpage from "./Components/Errorpage/Errorpage.jsx";
+import AddArt from "./Components/AddArt/AddArt.jsx";
+import NonSignIn from "./Components/ProtectedRoute/NonSignIn.jsx";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +41,14 @@ const router = createBrowserRouter([
                     <AlreadySignIn>
                         <SignUp></SignUp>
                     </AlreadySignIn>
+                ),
+            },
+            {
+                path: "/addart",
+                element: (
+                    <NonSignIn>
+                        <AddArt></AddArt>
+                    </NonSignIn>
                 ),
             },
         ],

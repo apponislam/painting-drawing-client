@@ -84,7 +84,7 @@ const Header = () => {
                 <NavLink to="/all">All Art & craft Items</NavLink>
             </li>
             <li>
-                <NavLink to="/all">Add Craft Item</NavLink>
+                <NavLink to="/addart">Add Craft Item</NavLink>
             </li>
             <li>
                 <NavLink to="/all">My Art&Craft List</NavLink>
