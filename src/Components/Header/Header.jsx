@@ -64,7 +64,7 @@ const Header = () => {
                 <NavLink to="/">Home</NavLink>
             </li>
             <li>
-                <NavLink to="/all">All Art & craft Items</NavLink>
+                <NavLink to="/allart">All Art & craft Items</NavLink>
             </li>
             <li>
                 <NavLink to="/login">Log In</NavLink>
@@ -81,13 +81,13 @@ const Header = () => {
                 <NavLink to="/">Home</NavLink>
             </li>
             <li>
-                <NavLink to="/all">All Art & craft Items</NavLink>
+                <NavLink to="/allart">All Art & craft Items</NavLink>
             </li>
             <li>
                 <NavLink to="/addart">Add Craft Item</NavLink>
             </li>
             <li>
-                <NavLink to="/all">My Art&Craft List</NavLink>
+                <NavLink to="/myart">My Art&Craft List</NavLink>
             </li>
         </>
     );
@@ -112,7 +112,7 @@ const Header = () => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                             </svg>
                         </div>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 gap-3">
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 gap-3 z-50">
                             {user ? navlinks : navlinks2}
                         </ul>
                     </div>

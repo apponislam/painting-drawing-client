@@ -1,11 +1,9 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import Login from "./Components/Login/Login.jsx";
 import { HelmetProvider } from "react-helmet-async";
-import AuthProvider from "./AuthProvider/AuthProvider.jsx";
 import Home from "./Components/Home/Home.jsx";
 import SignUp from "./Components/SignUp/SignUp.jsx";
 import { ToastContainer } from "react-toastify";
@@ -17,6 +15,10 @@ import Errorpage from "./Components/Errorpage/Errorpage.jsx";
 import AddArt from "./Components/AddArt/AddArt.jsx";
 import NonSignIn from "./Components/ProtectedRoute/NonSignIn.jsx";
 import ViewDetails from "./Components/ViewDetails/ViewDetails.jsx";
+import AllArt from "./Components/AllArt/AllArt.jsx";
+import AuthProvider from "./AuthProvider/AuthProvider.jsx";
+import React from "react";
+import MyArt from "./Components/MyArt/MyArt.jsx";
 
 const router = createBrowserRouter([
     {
@@ -54,11 +56,24 @@ const router = createBrowserRouter([
                 ),
             },
             {
-                path: "/:id",
+                path: "/details/:id",
                 loader: ({ params }) => fetch(`http://localhost:5000/allart/${params.id}`),
                 element: (
                     <NonSignIn>
                         <ViewDetails></ViewDetails>
+                    </NonSignIn>
+                ),
+            },
+            {
+                path: "/allart",
+                element: <AllArt></AllArt>,
+                loader: () => fetch("http://localhost:5000/allart"),
+            },
+            {
+                path: "/myart",
+                element: (
+                    <NonSignIn>
+                        <MyArt></MyArt>
                     </NonSignIn>
                 ),
             },

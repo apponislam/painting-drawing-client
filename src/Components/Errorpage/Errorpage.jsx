@@ -1,16 +1,21 @@
-import { Link, useRouteError } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 const Errorpage = () => {
-    const error = useRouteError();
-    console.log(error);
+    // const error = useRouteError();
+    // console.log(error);
 
     return (
         <div className="h-screen flex items-center justify-center">
+            <Helmet>
+                <title>Page Not Found | Appon Painting & Drawing</title>
+            </Helmet>
             <div>
                 <h1 className="text-9xl mb-10">Opps</h1>
-                <p className="text-center text-2xl mb-5">
-                    {error.status || 404} - {error.statusText || "Page not found"}
-                </p>
+                {/* <p className="text-center text-2xl mb-5">
+                    {error.status || 404} - {error?.statusText || "Page not found"}
+                </p> */}
+                <p className="text-center text-2xl mb-5">404 - Page not found</p>
                 <div className="flex items-center justify-center">
                     <Link to="/">
                         <button className="btn bg-[#4b87fd] border-[#4b87fd] hover:bg-[#0356f9] text-white">Back to Home</button>

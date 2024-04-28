@@ -16,7 +16,7 @@ const HomeCard = ({ art }) => {
             <p className="mb-3">
                 Sub Category: <span className="font-extrabold">{subcategory_Name}</span>
             </p>
-            <Link to={`/${_id}`}>
+            <Link to={`/details/${_id}`}>
                 <button className="btn w-full btn-primary bg-[#4b87fd] border-[#4b87fd] hover:bg-[#0356f9] text-white">View Details</button>
             </Link>
         </div>
