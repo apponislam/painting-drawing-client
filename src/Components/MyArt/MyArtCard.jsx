@@ -2,9 +2,9 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import swal from "sweetalert";
 
-const MyArtCard = ({ datas, art, setDatas2 }) => {
+const MyArtCard = ({ datas, art, setDatas2, setDatas }) => {
     const { _id, image, item_name, subcategory_Name, price, customization } = art;
-    // console.log(datas);
+
     // console.log(setDatas2);
 
     const deleteArt = (id) => {
@@ -31,6 +31,7 @@ const MyArtCard = ({ datas, art, setDatas2 }) => {
                             const newData = datas.filter((data) => data._id !== id);
                             console.log(newData);
                             setDatas2(newData);
+                            setDatas(newData);
                         }
                     });
             } else {
@@ -53,7 +54,7 @@ const MyArtCard = ({ datas, art, setDatas2 }) => {
                 Customization: <span className="font-extrabold">{customization}</span>
             </p>
             <div className="grid grid-cols-2 gap-3 mb-3">
-                <Link to={`/${_id}`}>
+                <Link to={`/update/${_id}`}>
                     <button className="btn w-full btn-primary bg-green-600 border-green-600 hover:bg-green-500 text-white">Update</button>
                 </Link>
                 <button onClick={() => deleteArt(_id)} className="btn w-full btn-primary bg-red-600 border-red-600 hover:bg-red-500 text-white">
@@ -70,6 +71,7 @@ const MyArtCard = ({ datas, art, setDatas2 }) => {
 MyArtCard.propTypes = {
     datas: PropTypes.array,
     art: PropTypes.object,
+    setDatas: PropTypes.func,
     setDatas2: PropTypes.func,
 };
 

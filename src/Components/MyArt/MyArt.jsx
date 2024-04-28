@@ -56,7 +56,7 @@ const MyArt = () => {
                 <title>My Art & Craft || Appon Painting & Drawing</title>
             </Helmet>
             <div className="my-20">
-                <h1 className="text-center text-3xl font-bold uppercase mb-8">My Art and Carft : {datas.length}</h1>
+                <h1 className="text-center text-3xl font-bold uppercase mb-8">My Art and Carft : {datas2.length}</h1>
 
                 <div className="mx-4 mb-5 flex items-center justify-center">
                     <select className="select select-bordered w-full max-w-xs" value={selectedOption} onChange={handleChange}>
@@ -68,7 +68,7 @@ const MyArt = () => {
 
                 <div className="grid grid-cols-3 gap-6 mb-20">
                     {datas2.map((art) => (
-                        <MyArtCard key={art._id} art={art} setData={setDatas} datas={datas} setDatas2={setDatas2}></MyArtCard>
+                        <MyArtCard key={art._id} art={art} setData={setDatas} datas={datas} setDatas2={setDatas2} setDatas={setDatas}></MyArtCard>
                     ))}
                 </div>
             </div>

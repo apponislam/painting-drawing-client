@@ -19,6 +19,7 @@ import AllArt from "./Components/AllArt/AllArt.jsx";
 import AuthProvider from "./AuthProvider/AuthProvider.jsx";
 import React from "react";
 import MyArt from "./Components/MyArt/MyArt.jsx";
+import Update from "./Components/MyArt/Update.jsx";
 
 const router = createBrowserRouter([
     {
@@ -74,6 +75,15 @@ const router = createBrowserRouter([
                 element: (
                     <NonSignIn>
                         <MyArt></MyArt>
+                    </NonSignIn>
+                ),
+            },
+            {
+                path: "/update/:id",
+                loader: ({ params }) => fetch(`http://localhost:5000/allart/${params.id}`),
+                element: (
+                    <NonSignIn>
+                        <Update></Update>
                     </NonSignIn>
                 ),
             },
