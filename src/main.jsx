@@ -20,6 +20,7 @@ import AuthProvider from "./AuthProvider/AuthProvider.jsx";
 import React from "react";
 import MyArt from "./Components/MyArt/MyArt.jsx";
 import Update from "./Components/MyArt/Update.jsx";
+import SubCategory from "./Components/Home/SubCategory.jsx";
 
 const router = createBrowserRouter([
     {
@@ -86,6 +87,11 @@ const router = createBrowserRouter([
                         <Update></Update>
                     </NonSignIn>
                 ),
+            },
+            {
+                path: "/subid/:id",
+                loader: ({ params }) => fetch(`http://localhost:5000/allart/subid/${params.id}`),
+                element: <SubCategory></SubCategory>,
             },
         ],
     },
