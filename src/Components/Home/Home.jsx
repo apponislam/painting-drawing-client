@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Slider from "./Slider";
 import { useLoaderData } from "react-router-dom";
 import HomeCard from "./HomeCard";
+import ModernPainting from "./ModernPainting";
 
 const Home = () => {
     const allArt = useLoaderData();
@@ -23,6 +24,7 @@ const Home = () => {
                     ))}
                 </div>
             </div>
+            <ModernPainting></ModernPainting>
         </div>
     );
 };
