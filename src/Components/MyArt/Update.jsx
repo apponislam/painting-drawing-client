@@ -28,7 +28,7 @@ const Update = () => {
         setStoke(e.target.value);
     };
 
-    const addArtBtn = (e) => {
+    const updateArtBtn = (e) => {
         e.preventDefault();
         const form = e.target;
         const image = form.itemImage.value;
@@ -41,32 +41,32 @@ const Update = () => {
         const processing_time = form.itemProcessTime.value;
         const stockStatus = stoke;
         const artItem = { image, item_name, subcategory_Name, short_description, price, rating, customization, processing_time, stockStatus };
-        // fetch("http://localhost:5000/allart", {
-        //     method: "POST",
-        //     headers: {
-        //         "content-type": "application/json",
-        //     },
-        //     body: JSON.stringify(artItem),
-        // })
-        //     .then((res) => res.json())
-        //     .then((data) => {
-        //         console.log(data);
-        //         if (data.insertedId) {
-        //             toast.success("Updated successfully");
-        //         }
-        //     });
+        fetch(`http://localhost:5000/allart/${loadedArt._id}`, {
+            method: "PUT",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(artItem),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                if (data.modifiedCount) {
+                    toast.success("Updated successfully");
+                }
+            });
         form.reset();
     };
 
     return (
         <div className="container mx-auto">
             <Helmet>
-                <title>Add Craft Item | Appon Painting & Drawing</title>
+                <title>Update Craft Item | Appon Painting & Drawing</title>
             </Helmet>
             <div className="flex justify-center items-center my-24">
                 <div className="bg-gray-600 p-8 rounded-3xl text-white w-1/2">
                     <h1 className="text-center text-4xl font-semibold uppercase mb-6">Update</h1>
-                    <form onSubmit={addArtBtn}>
+                    <form onSubmit={updateArtBtn}>
                         <div className="grid grid-cols-2 gap-5 mb-5">
                             <label className="form-control w-full">
                                 <div className="label">
