@@ -47,7 +47,7 @@ const Footer = () => {
                         </nav>
                     </div>
                 </div>
-                <div className="flex flex-col md:flex-row  items-center justify-between mt-6 py-6 border-t gap-4 px-4 lg:px-0">
+                <div className="flex flex-col md:flex-row  items-center justify-between mt-6 py-6 border-t gap-4 px-0 lg:px-0 mx-3 xl:mx-0">
                     <p className="text-white">&copy; 2024 Your Appon P&D. All rights reserved.</p>
                     <div className="flex items-center gap-4">
                         <p className="text-white">Follow Us : </p>
