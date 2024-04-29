@@ -6,7 +6,7 @@ const HomeCard2 = ({ art }) => {
 
     return (
         <div className="border p-3 md:p-5 rounded-2xl">
-            <img className="h-72 object-cover mb-4 border rounded-2xl" src={image} alt="" />
+            <img className="h-72 object-cover mb-4 border rounded-2xl w-full" src={image} alt="" />
             <p className="mb-3 font-medium">{item_name}</p>
             <p className="mb-3">
                 Price: <span className="font-bold">${price}</span>
