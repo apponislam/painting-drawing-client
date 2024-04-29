@@ -65,7 +65,7 @@ const AddArt = () => {
             </Helmet>
             <div className="flex justify-center items-center my-10 md:my-24">
                 <div className="bg-gray-600 p-4 md:p-8 rounded-3xl text-white mx-3 md:mx-0 w-full lg:w-1/2">
-                    <h1 className="text-center text-4xl font-semibold uppercase mb-6">Add Craft</h1>
+                    <h1 className="text-center text-2xl md:text-4xl font-semibold uppercase mb-3 md:mb-6">Add Craft</h1>
                     <form onSubmit={addArtBtn}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 mb-4 md:mb-5">
                             <label className="form-control w-full">

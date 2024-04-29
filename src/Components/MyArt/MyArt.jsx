@@ -56,7 +56,7 @@ const MyArt = () => {
                 <title>My Art & Craft || Appon Painting & Drawing</title>
             </Helmet>
             <div className="my-20">
-                <h1 className="text-center text-3xl font-bold uppercase mb-8">My Art and Carft : {datas2.length}</h1>
+                <h1 className="text-center text-2xl md:text-3xl font-bold uppercase mb-8">My Art and Carft : {datas2.length}</h1>
 
                 <div className="mx-4 mb-5 flex items-center justify-center">
                     <select className="select select-bordered w-full max-w-xs" value={selectedOption} onChange={handleChange}>
