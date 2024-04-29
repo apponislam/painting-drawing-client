@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router-dom";
 import HomeCard from "./HomeCard";
 import ModernPainting from "./ModernPainting";
 import ArtShowCase from "./ArtShowCase";
+import HomeCard2 from "./HomeCard2";
 
 const Home = () => {
     const allArt = useLoaderData();
@@ -19,6 +20,14 @@ const Home = () => {
             <Slider></Slider>
             <div className="container mx-auto">
                 <h1 className="text-4xl text-center my-12 uppercase font-extrabold">Craft items</h1>
+                <div className="grid grid-cols-3 gap-6 mb-20">
+                    {firstSixArt.map((art) => (
+                        <HomeCard2 key={art._id} art={art}></HomeCard2>
+                    ))}
+                </div>
+            </div>
+            <div className="container mx-auto">
+                <h1 className="text-4xl text-center my-12 uppercase font-extrabold">Art And Craft Categories</h1>
                 <div className="grid grid-cols-3 gap-6 mb-20">
                     {firstSixArt.map((art) => (
                         <HomeCard key={art._id} art={art}></HomeCard>
