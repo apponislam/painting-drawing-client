@@ -3,6 +3,7 @@ import Slider from "./Slider";
 import { useLoaderData } from "react-router-dom";
 import HomeCard from "./HomeCard";
 import ModernPainting from "./ModernPainting";
+import ArtShowCase from "./ArtShowCase";
 
 const Home = () => {
     const allArt = useLoaderData();
@@ -25,6 +26,7 @@ const Home = () => {
                 </div>
             </div>
             <ModernPainting></ModernPainting>
+            <ArtShowCase></ArtShowCase>
         </div>
     );
 };
