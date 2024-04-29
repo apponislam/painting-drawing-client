@@ -15,7 +15,7 @@ const Home = () => {
     return (
         <div>
             <Helmet>
-                <title>Appon Printing & Drawing</title>
+                <title>Appon Painting & Drawing</title>
             </Helmet>
             <Slider></Slider>
             <div className="container md:mx-auto">

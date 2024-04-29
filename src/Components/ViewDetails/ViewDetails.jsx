@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 
 const ViewDetails = () => {
@@ -8,6 +9,9 @@ const ViewDetails = () => {
 
     return (
         <div className="container mx-auto">
+            <Helmet>
+                <title>{item_name} | Appon Painting & Drawing</title>
+            </Helmet>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-24 mx-3 xl:mx-0">
                 <div>
                     <img className="w-full h-full object-cover border rounded-2xl" src={image} />
