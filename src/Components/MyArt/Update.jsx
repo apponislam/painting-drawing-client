@@ -64,10 +64,10 @@ const Update = () => {
                 <title>Update Craft Item | Appon Painting & Drawing</title>
             </Helmet>
             <div className="flex justify-center items-center my-24">
-                <div className="bg-gray-600 p-8 rounded-3xl text-white w-1/2">
+                <div className="bg-gray-600 p-8 rounded-3xl text-white mx-3 md:mx-0 w-full lg:w-1/2">
                     <h1 className="text-center text-4xl font-semibold uppercase mb-6">Update</h1>
                     <form onSubmit={updateArtBtn}>
-                        <div className="grid grid-cols-2 gap-5 mb-5">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
                             <label className="form-control w-full">
                                 <div className="label">
                                     <span className="label-text text-white">Item Name</span>

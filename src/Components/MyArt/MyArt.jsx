@@ -66,7 +66,7 @@ const MyArt = () => {
                     </select>
                 </div>
 
-                <div className="grid grid-cols-3 gap-6 mb-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-20 mx-3 xl:mx-0">
                     {datas2.map((art) => (
                         <MyArtCard key={art._id} art={art} setData={setDatas} datas={datas} setDatas2={setDatas2} setDatas={setDatas}></MyArtCard>
                     ))}

@@ -5,13 +5,13 @@ const HomeCard2 = ({ art }) => {
     const { _id, image, item_name, subcategory_Name, price } = art;
 
     return (
-        <div className="border p-5 rounded-2xl">
-            <img className="w-full h-72 object-cover mb-4 border rounded-2xl" src={image} alt="" />
+        <div className="border p-3 md:p-5 rounded-2xl">
+            <img className="h-72 object-cover mb-4 border rounded-2xl" src={image} alt="" />
             <p className="mb-3 font-medium">{item_name}</p>
             <p className="mb-3">
                 Price: <span className="font-bold">${price}</span>
             </p>
-            <p className="mb-3 flex gap-3 items-center">
+            <p className="mb-3 text-xs md:text-[16px] flex gap-3 items-center">
                 Sub Category: <span className="font-extrabold">{subcategory_Name}</span>
             </p>
             <Link to={`/details/${_id}`}>

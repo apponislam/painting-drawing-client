@@ -18,24 +18,26 @@ const Home = () => {
                 <title>Appon Printing & Drawing</title>
             </Helmet>
             <Slider></Slider>
-            <div className="container mx-auto">
-                <h1 className="text-4xl text-center my-12 uppercase font-extrabold">Craft items</h1>
-                <div className="grid grid-cols-3 gap-6 mb-20">
+            <div className="container md:mx-auto">
+                <h1 className="text-2xl md:text-4xl text-center my-12 uppercase font-extrabold">Craft items</h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-20 mx-3 xl:mx-0">
                     {firstSixArt.map((art) => (
                         <HomeCard2 key={art._id} art={art}></HomeCard2>
                     ))}
                 </div>
             </div>
-            <div className="container mx-auto">
-                <h1 className="text-4xl text-center my-12 uppercase font-extrabold">Art And Craft Categories</h1>
-                <div className="grid grid-cols-3 gap-6 mb-20">
+            <div className="container md:mx-auto">
+                <h1 className="text-2xl md:text-4xl text-center my-12 uppercase font-extrabold">Art And Craft Categories</h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-20 mx-3 xl:mx-0">
                     {firstSixArt.map((art) => (
                         <HomeCard key={art._id} art={art}></HomeCard>
                     ))}
                 </div>
             </div>
-            <ModernPainting></ModernPainting>
-            <ArtShowCase></ArtShowCase>
+            <div className="mx-3 xl:mx-0">
+                <ModernPainting></ModernPainting>
+                <ArtShowCase></ArtShowCase>
+            </div>
         </div>
     );
 };

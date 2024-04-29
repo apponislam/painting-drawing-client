@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Login = () => {
-    const { signInUser, googleSignIn, githubSignIn } = useContext(AuthContext);
+    const { signInUser, googleSignIn, setLoading, githubSignIn } = useContext(AuthContext);
     const location = useLocation();
     // console.log("Location In Login Page", location);
 
@@ -26,7 +26,7 @@ const Login = () => {
             .catch((error) => {
                 toast.error("Please enter correct email and password");
                 console.log(error);
-                // setLoading(false);
+                setLoading(false);
             });
     };
 
