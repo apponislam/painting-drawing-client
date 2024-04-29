@@ -20,7 +20,7 @@ const MyArtCard = ({ datas, art, setDatas2, setDatas }) => {
                 swal("Deleted Succesfully", {
                     icon: "success",
                 });
-                fetch(`http://localhost:5000/allart/${id}`, {
+                fetch(`https://painting-drawing-server-three.vercel.app/allart/${id}`, {
                     method: "DELETE",
                 })
                     .then((res) => res.json())

@@ -41,7 +41,7 @@ const AddArt = () => {
         const processing_time = form.itemProcessTime.value;
         const stockStatus = stoke;
         const artItem = { username, useremail, image, item_name, subcategory_Name, short_description, price, rating, customization, processing_time, stockStatus };
-        fetch("http://localhost:5000/allart", {
+        fetch("https://painting-drawing-server-three.vercel.app/allart", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

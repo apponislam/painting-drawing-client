@@ -31,7 +31,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch("http://localhost:5000/allart"),
+                loader: () => fetch("https://painting-drawing-server-three.vercel.app/allart"),
             },
             {
                 path: "/login",
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/details/:id",
-                loader: ({ params }) => fetch(`http://localhost:5000/allart/${params.id}`),
+                loader: ({ params }) => fetch(`https://painting-drawing-server-three.vercel.app/allart/${params.id}`),
                 element: (
                     <NonSignIn>
                         <ViewDetails></ViewDetails>
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
             {
                 path: "/allart",
                 element: <AllArt></AllArt>,
-                loader: () => fetch("http://localhost:5000/allart"),
+                loader: () => fetch("https://painting-drawing-server-three.vercel.app/allart"),
             },
             {
                 path: "/myart",
@@ -81,7 +81,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/update/:id",
-                loader: ({ params }) => fetch(`http://localhost:5000/allart/${params.id}`),
+                loader: ({ params }) => fetch(`https://painting-drawing-server-three.vercel.app/allart/${params.id}`),
                 element: (
                     <NonSignIn>
                         <Update></Update>
@@ -90,7 +90,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/subid/:id",
-                loader: ({ params }) => fetch(`http://localhost:5000/allart/subid/${params.id}`),
+                loader: ({ params }) => fetch(`https://painting-drawing-server-three.vercel.app/allart/subid/${params.id}`),
                 element: <SubCategory></SubCategory>,
             },
         ],

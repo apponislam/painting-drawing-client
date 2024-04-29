@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet-async";
 const MyArt = () => {
     const { user } = useContext(AuthContext);
     const email = user.email;
-    const fetchlink = `http://localhost:5000/allart/email/${email}`;
+    const fetchlink = `https://painting-drawing-server-three.vercel.app/allart/email/${email}`;
 
     const [datas, setDatas] = useState([]);
     const [datas2, setDatas2] = useState([]);
