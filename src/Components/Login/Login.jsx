@@ -35,11 +35,12 @@ const Login = () => {
             .then((result) => {
                 console.log(result.user);
                 toast.success("login successfully");
-                // setSuccessLogin(true);
+
                 // alert("login successfully");
             })
             .catch((error) => {
                 console.log(error);
+                setLoading(false);
                 toast.error("login failed");
             });
     };
@@ -54,8 +55,8 @@ const Login = () => {
             })
             .catch((error) => {
                 console.log(error);
+                setLoading(false);
                 toast.error("login failed");
-                // setLoading(false);
             });
     };
 
