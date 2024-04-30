@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import { FaArrowLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const HomeCard = ({ art }) => {
@@ -16,14 +15,9 @@ const HomeCard = ({ art }) => {
             </p>
             <p className="mb-3 flex text-xs md:text-[16px] gap-3 items-center">
                 Sub Category: <span className="font-extrabold">{subcategory_Name}</span>
-                <Link to={`/subid/${subcategory_Name}`}>
-                    <button className="btn py-1 px-1 min-h-fit bg-green-600 border-green-500 hover:bg-green-500 text-white">
-                        <FaArrowLeft /> ALL
-                    </button>
-                </Link>
             </p>
-            <Link to={`/details/${_id}`}>
-                <button className="btn w-full btn-primary bg-[#4b87fd] border-[#4b87fd] hover:bg-[#0356f9] text-white">View Details</button>
+            <Link to={`/subid/${subcategory_Name}`}>
+                <button className="btn w-full btn-primary bg-[#4b87fd] border-[#4b87fd] hover:bg-[#0356f9] text-white">ALL - {subcategory_Name}</button>
             </Link>
         </div>
     );
